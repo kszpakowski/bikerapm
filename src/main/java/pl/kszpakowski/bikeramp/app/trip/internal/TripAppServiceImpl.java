@@ -2,15 +2,19 @@ package pl.kszpakowski.bikeramp.app.trip.internal;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import pl.kszpakowski.bikeramp.app.maps.Distance;
+import pl.kszpakowski.bikeramp.app.vo.Distance;
 import pl.kszpakowski.bikeramp.app.maps.MapsService;
 import pl.kszpakowski.bikeramp.app.trip.CreateTripCommand;
+import pl.kszpakowski.bikeramp.app.vo.Price;
 import pl.kszpakowski.bikeramp.app.trip.Trip;
-import pl.kszpakowski.bikeramp.app.trip.TripAppService;
+import pl.kszpakowski.bikeramp.app.trip.TripService;
+
+import java.time.Instant;
+import java.util.Collection;
 
 @Service
 @RequiredArgsConstructor
-class TripAppServiceImpl implements TripAppService {
+class TripAppServiceImpl implements TripService {
 
     private final MapsService mapsService;
     private final TripRepository tripRepository;
@@ -26,5 +30,10 @@ class TripAppServiceImpl implements TripAppService {
                 .build();
 
         return tripRepository.save(trip);
+    }
+
+    @Override
+    public Collection<Trip> getTrips(Instant after) {
+        return tripRepository.findAllByDateAfter(after);
     }
 }

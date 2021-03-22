@@ -22,7 +22,7 @@ class TripsControllerTest {
     private int serverPort;
 
     @Test
-    public void whenRequestPOST_thenOK() {
+    public void whenRequestPOST_thenCREATED() {
         given()
                 .port(serverPort)
                 .contentType(ContentType.JSON)

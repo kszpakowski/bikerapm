@@ -2,7 +2,7 @@ package pl.kszpakowski.bikeramp.app.maps.internal;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.kszpakowski.bikeramp.app.maps.Distance;
+import pl.kszpakowski.bikeramp.app.vo.Distance;
 import pl.kszpakowski.bikeramp.app.maps.MapsService;
 
 @Slf4j

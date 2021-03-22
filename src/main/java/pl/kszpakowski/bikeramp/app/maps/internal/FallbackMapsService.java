@@ -3,7 +3,7 @@ package pl.kszpakowski.bikeramp.app.maps.internal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
-import pl.kszpakowski.bikeramp.app.maps.Distance;
+import pl.kszpakowski.bikeramp.app.vo.Distance;
 import pl.kszpakowski.bikeramp.app.maps.MapsService;
 
 import java.util.concurrent.CompletableFuture;

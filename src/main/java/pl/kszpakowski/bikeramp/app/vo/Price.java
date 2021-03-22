@@ -1,4 +1,4 @@
-package pl.kszpakowski.bikeramp.app.trip.internal;
+package pl.kszpakowski.bikeramp.app.vo;
 
 import lombok.Data;
 
@@ -10,5 +10,9 @@ public class Price {
 
     public static Price of(BigDecimal value){
         return new Price(value);
+    }
+
+    public Price add(Price price){
+        return new Price(this.value.add(price.value));
     }
 }

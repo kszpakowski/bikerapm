@@ -1,7 +1,7 @@
 package pl.kszpakowski.bikeramp.app.maps.internal;
 
 import org.junit.jupiter.api.Test;
-import pl.kszpakowski.bikeramp.app.maps.Distance;
+import pl.kszpakowski.bikeramp.app.vo.Distance;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -45,5 +45,21 @@ class FallbackMapsServiceTest {
 
         //then
         assertEquals(expectedDistance, distance);
+    }
+
+    @Test
+    void shouldThrowExceptionWhenBothProvidersAreNotAvailable(){
+
+        //given
+        GoogleMapsService gms = mock(GoogleMapsService.class);
+        when(gms.getDistance(anyString(),anyString())).thenThrow(new RuntimeException("GM is not available"));
+
+        OSMapsService osm = mock(OSMapsService.class);
+        when(osm.getDistance(anyString(),anyString())).thenThrow(new RuntimeException("OSM is not available"));
+        FallbackMapsService fms = new FallbackMapsService(gms,osm);
+
+        //then
+
+        assertThrows(RuntimeException.class,() -> fms.getDistance("A", "B"));
     }
 }

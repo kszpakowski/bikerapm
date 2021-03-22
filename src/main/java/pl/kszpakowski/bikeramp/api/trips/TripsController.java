@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.kszpakowski.bikeramp.api.trips.dto.CreateTripRequest;
 import pl.kszpakowski.bikeramp.api.trips.dto.TripDto;
 import pl.kszpakowski.bikeramp.app.trip.CreateTripCommand;
-import pl.kszpakowski.bikeramp.app.trip.TripAppService;
+import pl.kszpakowski.bikeramp.app.trip.TripService;
 
 import java.net.URI;
 
@@ -21,7 +21,7 @@ import java.net.URI;
 @RequiredArgsConstructor
 public class TripsController {
 
-    private final TripAppService tripAppService;
+    private final TripService tripService;
     private final TripMapper mapper;
 
     @ApiOperation(value = "Create trip", notes="This endpoint logs the trip and automatically calculates the distance between start and destination addresses.")
@@ -35,7 +35,7 @@ public class TripsController {
                 .price(request.getPrice())
                 .build();
 
-        TripDto dto = mapper.map(tripAppService.createTrip(createTripCommand));
+        TripDto dto = mapper.map(tripService.createTrip(createTripCommand));
         return ResponseEntity.created(URI.create(String.format("/trips/%s", dto.getId()))).body(dto);
     }
 }

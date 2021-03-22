@@ -4,8 +4,8 @@ import lombok.Builder;
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import pl.kszpakowski.bikeramp.app.maps.Distance;
-import pl.kszpakowski.bikeramp.app.trip.internal.Price;
+import pl.kszpakowski.bikeramp.app.vo.Distance;
+import pl.kszpakowski.bikeramp.app.vo.Price;
 
 import java.time.Instant;
 
