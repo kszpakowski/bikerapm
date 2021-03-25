@@ -1,4 +1,4 @@
-package pl.kszpakowski.bikeramp.app.maps;
+package pl.kszpakowski.bikeramp.maps;
 
 import pl.kszpakowski.bikeramp.app.vo.Distance;
 

@@ -1,7 +1,9 @@
-package pl.kszpakowski.bikeramp.app.maps.internal;
+package pl.kszpakowski.bikeramp.maps;
 
 import org.junit.jupiter.api.Test;
 import pl.kszpakowski.bikeramp.app.vo.Distance;
+import pl.kszpakowski.bikeramp.maps.google.GoogleMapsService;
+import pl.kszpakowski.bikeramp.maps.osm.OSMapsService;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;

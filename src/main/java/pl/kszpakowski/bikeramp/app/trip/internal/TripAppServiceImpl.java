@@ -3,7 +3,7 @@ package pl.kszpakowski.bikeramp.app.trip.internal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.kszpakowski.bikeramp.app.vo.Distance;
-import pl.kszpakowski.bikeramp.app.maps.MapsService;
+import pl.kszpakowski.bikeramp.maps.MapsService;
 import pl.kszpakowski.bikeramp.app.trip.CreateTripCommand;
 import pl.kszpakowski.bikeramp.app.vo.Price;
 import pl.kszpakowski.bikeramp.app.trip.Trip;

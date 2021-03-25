@@ -1,4 +1,4 @@
-package pl.kszpakowski.bikeramp.app.maps.internal;
+package pl.kszpakowski.bikeramp.maps.osm;
 
 import org.junit.jupiter.api.Test;
 import pl.kszpakowski.bikeramp.app.vo.Distance;

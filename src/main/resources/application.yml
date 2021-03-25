@@ -1,1 +1,8 @@
 logging.level.pl.kszpakowski: DEBUG
+
+management.endpoints.web.exposure.include: '*'
+management.endpoint.health.show-details: always
+
+management.health.diskspace.enabled: false
+
+maps.google.apiKey: "secret"
